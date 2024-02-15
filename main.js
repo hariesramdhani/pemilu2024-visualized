@@ -58,15 +58,15 @@ await d3.json(APIurl, (error, data) => {
 
 	Object.keys(data["data"]).forEach(obj => {
 		if(data["data"][obj]["paslon_1_count"] !== "") {
-			totalCandidateOneCount += parseInt(data["data"][obj]["paslon_1_count"].replace(".", ""));
+			totalCandidateOneCount += parseInt(data["data"][obj]["paslon_1_count"].replaceAll(".", ""));
 		}
 
 		if(data["data"][obj]["paslon_2_count"] !== "") {
-			totalCandidateTwoCount += parseInt(data["data"][obj]["paslon_2_count"].replace(".", ""));
+			totalCandidateTwoCount += parseInt(data["data"][obj]["paslon_2_count"].replaceAll(".", ""));
 		}
 
 		if(data["data"][obj]["paslon_3_count"] !== "") {
-			totalCandidateThreeCount += parseInt(data["data"][obj]["paslon_3_count"].replace(".", ""));
+			totalCandidateThreeCount += parseInt(data["data"][obj]["paslon_3_count"].replaceAll(".", ""));
 		}
 	})
 
