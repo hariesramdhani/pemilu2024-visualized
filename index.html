@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Google Analytics -->
+    <script>
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+        ga('create', 'UA-136102323-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pemilu Visualized</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="author" content="Haries Ramdhani">
+    <meta name="description" content="An interactive data visualization of the result of Indonesia's recent election built using D3.js and Pemilu API">
+    <link rel="shortcut icon" type="image/png" href="src/assets/img/favicon.png" />
+
+    <meta property="og:image" content="https://raw.githubusercontent.com/hariesramdhani/Pemilu-visualized/master/src/assets/img/twitter_card.png">
+    <meta property="og:description" content="An interactive data visualization of the result of Indonesia's recent election built using D3.js and Pemilu API">
+    <meta property="og:title" content="Pemilu Visualized">
+
+    <!--Twitter-->
+    <meta name="twitter:title" content="Pemilu Visualized">
+    <meta name="twitter:description" content="An interactive data visualization of the result of Indonesia's recent election built using D3.js and Pemilu API">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/hariesramdhani/Pemilu-visualized/master/src/assets/img/twitter_card.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" media="screen" href="src/css/main.css">
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="src/assets/scripts/d3.min.js"></script>
+    
+
+</head>
+<body>
+    <script src="https://d3js.org/topojson.v2.min.js"></script>
+    
+    </script>
+    <div id="title" style="display: flex; flex-direction: column; margin-bottom: 10px;">
+        <p style="font-size: 60px; font-weight: bold;">
+            PEMILU 2024 LIVE COUNT RESULT
+        </p>
+        <p style="font-size: 12px;">Retrieved from <a href="https://pemilu2024.kpu.go.id/">KPU</a>. Last updated at <span id="last_updated"></span></p>
+    </div>
+    
+    <div style="display: flex; flex-direction: row; justify-content: center; width: 900px; margin: 0 auto; gap: 40px;">
+        <div style="display: flex; flex-direction: row;">
+            <img width="100" src="src/assets/img/paslon_1.png" style="border-radius: 50%; margin: 10px; border: 3px solid black;">
+            <div style="display: flex; flex-direction: column; justify-content: center;">
+                <p>ANIES-MUHAIMIN</p>
+                <p id="paslon_1_percentage" style="font-size: 40px; font-weight: bold;">90%</p>
+                <p id="paslon_1_count" style="font-size: 18px;">90</p>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row;">
+            <img width="100" src="src/assets/img/paslon_2.png" style="border-radius: 50%; margin: 10px; border: 3px solid black;">
+            <div style="display: flex; flex-direction: column; justify-content: center;">
+                <p>PRABOWO-GIBRAN</p>
+                <p id="paslon_2_percentage" style="font-size: 40px; font-weight: bold;">90%</p>
+                <p id="paslon_2_count" style="font-size: 18px;">90</p>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: row;">
+            <img width="100" src="src/assets/img/paslon_3.png" style="border-radius: 50%; margin: 10px; border: 3px solid black;">
+            <div style="display: flex; flex-direction: column; justify-content: center;">
+                <p>GANJAR-MAHFUD</p>
+                <p id="paslon_3_percentage" style="font-size: 40px; font-weight: bold;">90%</p>
+                <p id="paslon_3_count" style="font-size: 18px;">90</p>
+            </div>
+        </div>
+    </div>
+    <div id="test">
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
+
