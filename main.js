@@ -33,7 +33,7 @@ let svg = d3.select(`#test`)
             .append("g")
             .attr("tranform", `translate(${margin.left}, ${margin.top})`);
 
-let APIurl = `https://157.230.44.40/kpu`;
+let APIurl = `https://raw.githubusercontent.com/hariesramdhani/temp-api/main/data/kpu_provinces_data.json`;
 
 // Make the number easier to read
 let commaSeparate = (num) => {
