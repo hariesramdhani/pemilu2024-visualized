@@ -33,7 +33,7 @@ let svg = d3.select(`#test`)
             .append("g")
             .attr("tranform", `translate(${margin.left}, ${margin.top})`);
 
-let APIurl = `src/assets/kpu.json`;
+let APIurl = `http://157.230.44.40/kpu`;
 
 // Make the number easier to read
 let commaSeparate = (num) => {
@@ -48,7 +48,9 @@ let totalCandidateOneCount = 0;
 let totalCandidateTwoCount = 0;
 let totalCandidateThreeCount = 0;
 
-d3.json(APIurl, (error, data) => {
+await d3.json(APIurl, (error, data) => {
+
+	console.log(data);
 
 	lengthOfData = Object.keys(data["data"]).length;
 
@@ -112,13 +114,14 @@ d3.json(APIurl, (error, data) => {
 		for (let j = 0; j < jsonFeatures.length; j++) {
 
 			voteData = data["data"][jsonFeatures[j]["properties"]["name"].toUpperCase()]
+			
 
 			Object.keys(data["data"]["ACEH"]).forEach(key => {
 				try {
 					if (voteData[key].includes("%")) {
 						jsonFeatures[j]["properties"][key] = voteData[key]
 					} else {
-						jsonFeatures[j]["properties"][key] = parseInt(voteData[key].replace(".", ""))
+						jsonFeatures[j]["properties"][key] = parseInt(voteData[key].replaceAll(".", ""))
 					}
 					
 				} catch (error) {
