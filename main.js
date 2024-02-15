@@ -33,7 +33,7 @@ let svg = d3.select(`#test`)
             .append("g")
             .attr("tranform", `translate(${margin.left}, ${margin.top})`);
 
-let APIurl = `http://157.230.44.40/kpu`;
+let APIurl = `https://157.230.44.40/kpu`;
 
 // Make the number easier to read
 let commaSeparate = (num) => {
